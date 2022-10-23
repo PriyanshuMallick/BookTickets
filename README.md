@@ -3,7 +3,6 @@
 A new Flutter project.
 
 <br>
-<br>
 
 # <I><b> Getting Started </b></I>
 
