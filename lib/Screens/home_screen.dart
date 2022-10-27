@@ -7,6 +7,8 @@ import 'package:fluentui_icons/fluentui_icons.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 
+import '../Widgets/section_title_widget.dart';
+
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
 
@@ -96,24 +98,7 @@ class HomeScreen extends StatelessWidget {
                 ),
                 const Gap(40),
                 //* Upcoming Flights Area
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text(
-                      "Upcoming Flights",
-                      style: Styles.headLineStyle2,
-                    ),
-                    InkWell(
-                      onTap: () {
-                        print("You tap on the thing");
-                      },
-                      child: Text(
-                        "View all",
-                        style: Styles.textStyle.copyWith(color: Styles.primaryColor),
-                      ),
-                    )
-                  ],
-                ),
+                const SectionTitle(title: "Upcoming Flights", menuTitle: "View all"),
               ],
             ),
           ),
@@ -125,38 +110,26 @@ class HomeScreen extends StatelessWidget {
             child: Row(children: ticketList.map((ticket) => TicketView(ticket: ticket)).toList()),
           ),
           const Gap(15),
-          //* Hotels Text
+          //* Hotels Text && Card
           Container(
             padding: const EdgeInsets.symmetric(horizontal: sidePadding),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            child: Column(
               children: [
-                Text(
-                  "Hotels",
-                  style: Styles.headLineStyle2,
-                ),
-                InkWell(
-                  onTap: () {
-                    print("You tap on the thing");
-                  },
-                  child: Text(
-                    "View all",
-                    style: Styles.textStyle.copyWith(color: Styles.primaryColor),
+                const SectionTitle(title: "Hotels", menuTitle: "View all"),
+                const Gap(15),
+                /*
+                 *  Hotels Card
+                 */
+                SingleChildScrollView(
+                  scrollDirection: Axis.horizontal,
+                  child: Row(
+                    children: hotelList.map((hotel) => HotelView(hotel: hotel)).toList(),
                   ),
-                )
+                ),
+                const Gap(15),
               ],
             ),
           ),
-          const Gap(15),
-          //* Hotels Card
-          SingleChildScrollView(
-            scrollDirection: Axis.horizontal,
-            padding: const EdgeInsets.only(left: sidePadding),
-            child: Row(
-              children: hotelList.map((hotel) => HotelView(hotel: hotel)).toList(),
-            ),
-          ),
-          const Gap(15),
         ],
       ),
     );
