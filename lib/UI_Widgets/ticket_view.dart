@@ -1,12 +1,15 @@
-import 'package:booktickets/Util/app_layout.dart';
-import 'package:booktickets/Util/app_styles.dart';
-import 'package:booktickets/Widgets/thick_container.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 
+import '../Util/app_layout.dart';
+import '../Util/app_styles.dart';
+import '../Widgets/thick_container.dart';
+// import '../Widgets/thick_container.dart';
+
 class TicketView extends StatelessWidget {
+  final bool? isColor;
   final Map<String, dynamic> ticket;
-  const TicketView({super.key, required this.ticket});
+  const TicketView({super.key, required this.ticket, this.isColor});
 
   @override
   Widget build(BuildContext context) {
@@ -35,7 +38,7 @@ class TicketView extends StatelessWidget {
                   topLeft: Radius.circular(borderRadius),
                   topRight: Radius.circular(borderRadius),
                 ),
-                color: const Color(0xFF526799),
+                color: isColor == null ? const Color(0xFF526799) : Colors.white,
               ),
               padding: EdgeInsets.all(padding),
               child: Column(
@@ -44,12 +47,12 @@ class TicketView extends StatelessWidget {
                     children: [
                       Text(
                         ticket['from']['code'],
-                        style: Styles.headLineStyle4,
+                        style: isColor == null ? Styles.headLineStyle4 : Styles.headLineStyle3,
                       ),
                       //
                       const Spacer(),
                       //
-                      const ThickContainer(),
+                      const ThickContainer(isColor: true),
                       Expanded(
                         child: Stack(
                           children: [
@@ -96,13 +99,13 @@ class TicketView extends StatelessWidget {
                           ],
                         ),
                       ),
-                      const ThickContainer(),
+                      const ThickContainer(isColor: true),
                       //
                       const Spacer(),
                       //
                       Text(
                         ticket['to']['code'],
-                        style: Styles.headLineStyle4,
+                        style: isColor == null ? Styles.headLineStyle4 : Styles.headLineStyle3,
                       ),
                     ],
                   ),
@@ -206,7 +209,7 @@ class TicketView extends StatelessWidget {
                   bottomLeft: Radius.circular(borderRadius),
                   bottomRight: Radius.circular(borderRadius),
                 ),
-                color: const Color(0xFFF37b67),
+                color: isColor == null ? const Color(0xFFF37b67) : Colors.white,
               ),
               padding: const EdgeInsets.only(top: 10, bottom: 16, right: 16, left: 16),
               child: Row(
@@ -217,7 +220,7 @@ class TicketView extends StatelessWidget {
                     children: [
                       Text(
                         ticket['date'],
-                        style: Styles.headLineStyle4,
+                        style: isColor == null ? Styles.headLineStyle4 : Styles.headLineStyle3,
                       ),
                       const Gap(5),
                       Text(
@@ -231,7 +234,7 @@ class TicketView extends StatelessWidget {
                     children: [
                       Text(
                         ticket['departure_time'],
-                        style: Styles.headLineStyle4,
+                        style: isColor == null ? Styles.headLineStyle4 : Styles.headLineStyle3,
                       ),
                       const Gap(5),
                       Text(
@@ -245,7 +248,7 @@ class TicketView extends StatelessWidget {
                     children: [
                       Text(
                         ticket['number'].toString(),
-                        style: Styles.headLineStyle4,
+                        style: isColor == null ? Styles.headLineStyle4 : Styles.headLineStyle3,
                       ),
                       const Gap(5),
                       Text(

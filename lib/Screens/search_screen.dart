@@ -1,11 +1,10 @@
-import 'package:booktickets/Util/app_layout.dart';
-import 'package:booktickets/Widgets/icon_text_widget.dart';
-import 'package:booktickets/Widgets/section_title_widget.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:gap/gap.dart';
 
+import '../Widgets/ticket_tabs.dart';
+import '../Util/app_layout.dart';
+import '../Widgets/icon_text_widget.dart';
+import '../Widgets/section_title_widget.dart';
 import '../Util/app_styles.dart';
 
 class SearchScreen extends StatelessWidget {
@@ -35,48 +34,7 @@ class SearchScreen extends StatelessWidget {
             *       &&
             *       Hotels
           */
-          FittedBox(
-            child: Container(
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(AppLayout.getHeight(50)),
-                color: const Color(0xFFF4F6FD),
-              ),
-              padding: const EdgeInsets.all(3.5),
-              child: Row(
-                children: [
-                  /*
-                  *    Airline Tickets Text
-                  */
-                  Container(
-                    width: size.width * .44,
-                    padding: EdgeInsets.symmetric(vertical: AppLayout.getHeight(7)),
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.horizontal(left: Radius.circular(AppLayout.getHeight(50))),
-                      color: Colors.white,
-                    ),
-                    child: const Center(
-                      child: Text("Airline tickets"),
-                    ),
-                  ),
-
-                  /*
-                  *    Hotels Text
-                  */
-                  Container(
-                    width: size.width * .44,
-                    padding: EdgeInsets.symmetric(vertical: AppLayout.getHeight(7)),
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.horizontal(right: Radius.circular(AppLayout.getHeight(50))),
-                      color: Colors.transparent,
-                    ),
-                    child: const Center(
-                      child: Text("Hotels"),
-                    ),
-                  ),
-                ],
-              ),
-            ),
-          ),
+          const AppTicketTab(tab1: "Airline Tickets", tab2: "Hotels"),
           /*
             * 
           */

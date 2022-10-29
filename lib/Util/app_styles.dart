@@ -13,8 +13,6 @@ class Styles {
   static Color textColor3 = const Color(0xFFFFFFFF);
   static Color kakiColor = const Color(0xFFd2bdb6);
 
-  // static Color textColor2 = const Color(0xFFB43333);
-//
   // * Text Styles
 
   static TextStyle textStyle = TextStyle(fontSize: 16, color: textColor1, fontWeight: FontWeight.w500);
