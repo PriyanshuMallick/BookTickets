@@ -50,88 +50,71 @@ class TicketView extends StatelessWidget {
                 color: isColor == null ? const Color(0xFF526799) : Colors.white,
               ),
               padding: EdgeInsets.all(padding),
-              child: Column(
+              child: Row(
                 children: [
-                  Row(
-                    children: [
-                      Text(
-                        ticket['from']['code'],
-                        style: isColor == null ? Styles.headLineStyle3_1 : Styles.headLineStyle3,
-                      ),
-                      //
-                      const Spacer(),
-                      //
-                      // ! Small Circle
-                      ThickContainer(isColor: isColor),
-
-                      // ! Airplane and Dash
-                      Expanded(
-                        child: Stack(
-                          children: [
-                            //  <HB> dashed
-                            SizedBox(
-                              height: AppLayout.getHeight(24),
-                              child: HorizontalBreakDashed(sections: 5, isColor: isColor),
-                            ),
-
-                            /*
-                            
-                            * Airplane Logo
-                            
-                            */
-
-                            Center(
-                              child: Transform.rotate(
-                                angle: 1.571,
-                                child: Icon(
-                                  Icons.local_airport,
-                                  color: isColor == null // * Airplane Color
-                                      ? Colors.white
-                                      : const Color(0xFF8ACCF7),
-                                ),
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-
-                      // ! Small Circle
-                      ThickContainer(isColor: isColor),
-                      //
-                      const Spacer(),
-                      //
-                      Text(
-                        ticket['to']['code'],
-                        style: isColor == null ? Styles.headLineStyle3_1 : Styles.headLineStyle3,
-                      ),
-                    ],
+                  AppColumnLayout(
+                    text1: ticket['from']['code'],
+                    text2: ticket['from']['name'],
+                    alignment: CrossAxisAlignment.start,
+                    isColor: isColor,
                   ),
-                  const Gap(3),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  //
+                  const Spacer(),
+                  //
+                  // ? Airplane
+                  Column(
                     children: [
-                      SizedBox(
-                        width: AppLayout.getWidth(100),
-                        child: Text(
-                          ticket['from']['name'],
-                          style: isColor == null ? Styles.headLineStyle4_1 : Styles.headLineStyle4,
-                        ),
+                      Row(
+                        children: [
+                          // ? Small Circle
+                          ThickContainer(isColor: isColor),
+
+                          // ? Airplane and Dash
+                          SizedBox(
+                            width: AppLayout.getWidth(90),
+                            height: AppLayout.getHeight(22),
+                            child: Stack(
+                              children: [
+                                //  <HB> dashed
+                                Center(child: HorizontalBreakDashed(sections: 5, isColor: isColor)),
+
+                                //  ? Airplane Logo
+
+                                Center(
+                                  child: Transform.rotate(
+                                    angle: 1.571,
+                                    child: Icon(
+                                      Icons.local_airport,
+                                      color: isColor == null // * Airplane Color
+                                          ? Colors.white
+                                          : const Color(0xFF8ACCF7),
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+
+                          // ? Small Circle
+                          ThickContainer(isColor: isColor),
+                        ],
                       ),
+                      Gap(AppLayout.getHeight(5)),
                       Text(
                         ticket['flying_time'],
                         style: isColor == null ? Styles.headLineStyle4_1 : Styles.headLineStyle4,
                       ),
-                      SizedBox(
-                        width: AppLayout.getWidth(100),
-                        child: Text(
-                          ticket['to']['name'],
-                          textAlign: TextAlign.end,
-                          style: isColor == null ? Styles.headLineStyle4_1 : Styles.headLineStyle4,
-                        ),
-                      ),
                     ],
                   ),
-                  // const Gap(midPartGap),
+                  //
+                  const Spacer(),
+                  //
+                  AppColumnLayout(
+                    text1: ticket['to']['code'],
+                    text2: ticket['to']['name'],
+                    alignment: CrossAxisAlignment.end,
+                    isColor: isColor,
+                  ),
                 ],
               ),
             ),
@@ -143,6 +126,7 @@ class TicketView extends StatelessWidget {
             */
 
             Container(
+              // color: isColor == null ? Styles.orangeColor : Colors.white,
               color: isColor == null ? Styles.blueColor : Colors.white,
               child: Row(
                 children: [
@@ -175,7 +159,7 @@ class TicketView extends StatelessWidget {
                                 height: AppLayout.getHeight(1),
                                 child: DecoratedBox(
                                   decoration: BoxDecoration(
-                                    color: isColor == null ? Styles.blueColor : Colors.grey.shade300, // * Dash color
+                                    color: isColor == null ? Colors.white : Colors.grey.shade300, // * Dash color
                                   ),
                                 ),
                               ),
