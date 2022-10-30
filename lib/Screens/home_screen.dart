@@ -5,9 +5,9 @@ import 'package:gap/gap.dart';
 import '../Util/app_layout.dart';
 import '../Util/app_styles.dart';
 import '../Util/app_info_list.dart';
-import '../UI_Widgets/hotel_view.dart';
-import '../UI_Widgets/ticket_view.dart';
+import '../Widgets/hotel_view.dart';
 import '../Widgets/section_title_widget.dart';
+import '../Widgets/ticket_view.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -91,7 +91,7 @@ class HomeScreen extends StatelessWidget {
                       const Gap(10),
                       Text(
                         "Search",
-                        style: Styles.headLineStyle5,
+                        style: Styles.headLineStyle4,
                       )
                     ],
                   ),

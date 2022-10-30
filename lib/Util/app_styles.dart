@@ -10,17 +10,20 @@ class Styles {
 
   static Color textColor1 = const Color(0xFF4E4E4E);
   static Color textColor2 = const Color(0xFF9E9E9E);
-  static Color textColor3 = const Color(0xFFFFFFFF);
+  static Color textColor3 = Colors.white;
   static Color kakiColor = const Color(0xFFd2bdb6);
 
   // * Text Styles
 
   static TextStyle textStyle = TextStyle(fontSize: 16, color: textColor1, fontWeight: FontWeight.w500);
   static TextStyle headLineStyle1 = TextStyle(fontSize: 26, color: textColor1, fontWeight: FontWeight.bold);
+
   static TextStyle headLineStyle2 = TextStyle(fontSize: 21, color: textColor1, fontWeight: FontWeight.bold);
   static TextStyle headLineStyle2_1 = TextStyle(fontSize: 21, color: kakiColor, fontWeight: FontWeight.bold);
-  static TextStyle headLineStyle3 = TextStyle(fontSize: 17, color: textColor2, fontWeight: FontWeight.w500);
-  static TextStyle headLineStyle4 = TextStyle(fontSize: 17, color: textColor3, fontWeight: FontWeight.w500);
-  static TextStyle headLineStyle5 = TextStyle(fontSize: 14, color: textColor2, fontWeight: FontWeight.w500);
-  static TextStyle headLineStyle5_1 = TextStyle(fontSize: 14, color: textColor3, fontWeight: FontWeight.w500);
+
+  static TextStyle headLineStyle3 = TextStyle(fontSize: 17, fontWeight: FontWeight.w500);
+  static TextStyle headLineStyle3_1 = TextStyle(fontSize: 17, color: textColor3, fontWeight: FontWeight.w500);
+
+  static TextStyle headLineStyle4 = TextStyle(fontSize: 14, color: textColor2, fontWeight: FontWeight.w500);
+  static TextStyle headLineStyle4_1 = TextStyle(fontSize: 14, color: textColor3, fontWeight: FontWeight.w500);
 }
