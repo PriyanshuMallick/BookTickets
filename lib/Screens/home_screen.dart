@@ -1,13 +1,13 @@
-import 'package:booktickets/Screens/hotel_view.dart';
-import 'package:booktickets/Screens/ticket_view.dart';
-import 'package:booktickets/Util/app_info_list.dart';
-import 'package:booktickets/Util/app_layout.dart';
-import 'package:booktickets/Util/app_styles.dart';
 import 'package:fluentui_icons/fluentui_icons.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 
+import '../Util/app_layout.dart';
+import '../Util/app_styles.dart';
+import '../Util/app_info_list.dart';
+import '../Widgets/hotel_view.dart';
 import '../Widgets/section_title_widget.dart';
+import '../Widgets/ticket_view.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -91,7 +91,7 @@ class HomeScreen extends StatelessWidget {
                       const Gap(10),
                       Text(
                         "Search",
-                        style: Styles.headLineStyle5,
+                        style: Styles.headLineStyle4,
                       )
                     ],
                   ),
