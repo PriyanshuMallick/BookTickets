@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
 
 import '../Util/app_layout.dart';
 
 class HorizontalBreakDashed extends StatelessWidget {
   final bool? isColor;
+  final double width;
   final int sections;
-  const HorizontalBreakDashed({super.key, this.isColor, required this.sections});
+  const HorizontalBreakDashed({super.key, this.isColor, required this.sections, this.width = 3});
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +19,7 @@ class HorizontalBreakDashed extends StatelessWidget {
           children: List.generate(
             (constraints.constrainWidth() / sections).floor(),
             (index) => SizedBox(
-              width: AppLayout.getWidth(3),
+              width: AppLayout.getWidth(width),
               height: AppLayout.getHeight(1),
               child: DecoratedBox(
                 decoration: BoxDecoration(
